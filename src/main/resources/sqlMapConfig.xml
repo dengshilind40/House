@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!--约束头-->
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--mybatis的核心配置文件-->
+<configuration>
+    <!--在控制台输出显示日志-->
+    <settings>
+        <setting name="logImpl" value="STDOUT_LOGGING"/>
+    </settings>
+    <!--配置别名-->
+   <!-- <typeAliases>
+        <package name="com.team.house.domain"></package>
+    </typeAliases>-->
+    <!--配置分页拦截器-->
+    <plugins>
+        <plugin interceptor="com.github.pagehelper.PageHelper">
+            <!--分页：首页：不能上一页
+                尾页：不能下一页
+                当到首页的时候  在上一页就不会传null值
+                当到尾页时  在下一页就不会传null值
+           -->
+            <property name="reasonable" value="true"></property>
+        </plugin>
+
+    </plugins>
+
+
+
+
+</configuration>
